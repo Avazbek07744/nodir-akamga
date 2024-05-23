@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodir Akamga </title>
+    <script src="./tailwind/tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="flex flex-col gap-8">
+            <btn id="btn" class="w-16 h-16 mr-10 shadow-lg rounded-full flex justify-center items-center ">
+                <div class="btn"></div>
+            </btn>
+            <div class="shadow-2xl menu w-[300px] h-screen overflow-hidden transition-all duration-300 py-10">
+                <ul class="h-max overflow-hidden">
+                    <li
+                        class="border-b px-5 overflow-hidden hover:bg-emerald-300 hover:pl-7 transition-all duration-300 pt-5 pb-2">
+                        <a href="#">Home</a>
+                    </li>
+                    <li
+                        class="border-b px-5 overflow-hidden hover:bg-emerald-300 hover:pl-7 transition-all duration-300 pt-5 pb-2">
+                        <a href="#">About us</a>
+                    </li>
+                    <li
+                        class="border-b px-5 overflow-hidden hover:bg-emerald-300 hover:pl-7 transition-all duration-300 pt-5 pb-2">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    const btn = document.getElementById("btn")
+    const menu = document.querySelector(".menu")
+    const toggleBtn = () => {
+        menu.classList.toggle("w-[300px]")
+        menu.classList.toggle("w-[0px]")
+    }
+    btn.addEventListener("click", () => {
+        if (menu.classList.contains("w-[300px]")) {
+            toggleBtn()
+            btn.children[0].classList.remove("open")
+        }
+        else {
+            toggleBtn()
+            btn.children[0].classList.add("open")
+        }
+    })
+</script>
+
+</html>
